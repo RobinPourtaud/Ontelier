@@ -1,0 +1,11 @@
+@prefix : <https://example.org/test#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+:Person a owl:Class .
+:related a owl:ObjectProperty, owl:TransitiveProperty .
+:parent a owl:ObjectProperty; rdfs:subPropertyOf :related; owl:inverseOf :child .
+:child a owl:ObjectProperty .
+:mother a owl:ObjectProperty; rdfs:subPropertyOf :parent .
+:Alice a owl:NamedIndividual, :Person; :mother :Bob; :related :Bob .
+:Bob a owl:NamedIndividual, :Person; :related :Carol .
+:Carol a owl:NamedIndividual, :Person .

@@ -1,0 +1,8 @@
+@prefix : <https://example.org/test#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+:Person a owl:Class . :Human a owl:Class; owl:equivalentClass :Person .
+:Animal a owl:Class . :PetOwner a owl:Class; owl:equivalentClass [ a owl:Restriction; owl:onProperty :owns; owl:someValuesFrom :Animal ] .
+:owns a owl:ObjectProperty; rdfs:domain :Person; rdfs:range :Animal .
+:Alice a owl:NamedIndividual; :owns :Cat .
+:Cat a owl:NamedIndividual .

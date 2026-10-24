@@ -1,0 +1,7 @@
+@prefix : <https://example.org/test#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+:Person a owl:Class .
+:Researcher a owl:Class; rdfs:subClassOf :Person .
+:Professor a owl:Class; rdfs:subClassOf :Researcher .
+:Alice a owl:NamedIndividual, :Professor .

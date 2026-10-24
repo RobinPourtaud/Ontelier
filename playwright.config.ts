@@ -1,0 +1,2 @@
+import { defineConfig } from '@playwright/test';
+export default defineConfig({ testDir: './tests/browser', timeout: 120_000, workers: 1, use: { baseURL: 'http://127.0.0.1:5178', browserName: 'chromium', launchOptions: { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined, args:['--disable-gpu'], timeout:30_000 }, headless: true }, webServer: { command: 'npm run dev -- --port 5178', url: 'http://127.0.0.1:5178', reuseExistingServer: !process.env.CI, timeout: 30_000 } });
